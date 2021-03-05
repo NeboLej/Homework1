@@ -8,10 +8,14 @@ namespace dz6
     {
         public static double SolutionOfAGivenEquation (double a, double b)
         {
-            if (a == b)
-            {
-                throw new ArgumentOutOfRangeException("а не должен быть равен б");
-            }
+            //Console.WriteLine("Веди A");
+            //a = Convert.ToDouble(Console.ReadLine());
+            //Console.WriteLine("Введи B");
+            //b = Convert.ToDouble(Console.ReadLine());
+            //if (a == b)
+            //{
+            //    throw exception = new DivideByZeroException("dsdsfdf");
+            //}
 
             double ans = 0;
             ans = (5*a+ Math.Pow(b,2))/(b-a);
@@ -23,7 +27,10 @@ namespace dz6
             double tmp = a;
             a = b;
             b = tmp;
-
+            reversOrder[0] = a;
+            reversOrder[1] = b;
+            //Console.WriteLine($"A была {b} стала {a}, а B была {a} стала {b}");
+            return reversOrder;
         }
 
         public static int[] DivisionResult (int a, int b)
