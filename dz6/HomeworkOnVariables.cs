@@ -12,17 +12,17 @@ namespace dz6
             //a = Convert.ToDouble(Console.ReadLine());
             //Console.WriteLine("Введи B");
             //b = Convert.ToDouble(Console.ReadLine());
-            //if (a == b)
-            //{
-            //    throw exception = new DivideByZeroException("dsdsfdf");
-            //}
+            if (a == b)
+            {
+                throw new ArgumentOutOfRangeException("а не должен быть равен б");
+            }
 
             double ans = 0;
             ans = (5*a+ Math.Pow(b,2))/(b-a);
             Console.WriteLine(ans);
             return ans;
         }
-        public static double[] ChangeOfPlacesOfVariables (double a, double b)
+        public static void ChangeOfPlacesOfVariables (ref double a, ref double b)
         {
             double[] reversOrder = new double[2];
 
@@ -33,10 +33,11 @@ namespace dz6
             double tmp = a;
             a = b;
             b = tmp;
-            reversOrder[0] = a;
-            reversOrder[1] = b;
+
+            //reversOrder[0] = a;
+            //reversOrder[1] = b;
             //Console.WriteLine($"A была {b} стала {a}, а B была {a} стала {b}");
-            return reversOrder;
+            //return reversOrder;
         }
 
         public static int[] DivisionResult (int a, int b)
