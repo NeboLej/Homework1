@@ -6,9 +6,9 @@ namespace dz6
     {
         static void Main(string[] args)
         {
-            double i = 0;
-            i = HomeworkOnCycles.FindACubeByBinaryMethod(81);
-            Console.WriteLine(i);
+            //double i = 0;
+            //HomeworkOnCycles.FindNumberrsSumOddGreaterSumEven(643);
+            //Console.WriteLine(i);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace dz6
 {
     public static class HomeworkOnCycles
     {
-        public static int Exponention (int a, int b)
+        public static int Exponention(int a, int b)
         {
             //int a = 0;
             //int b = 0;
@@ -17,7 +17,7 @@ namespace dz6
                 return 1;
             }
             int a0 = a;
-            for (int i = 2; i<=b; i ++)
+            for (int i = 2; i <= b; i++)
             {
                 a *= a0;
 
@@ -26,18 +26,18 @@ namespace dz6
             return a;
         }
 
-        public static int[] DivisionByNymber (int a)
+        public static int[] DivisionByNymber(int a)
         {
             int[] result = new int[1000 / a];
             int j = 0;
             //int a = 0;
             //a = Convert.ToInt32(Console.ReadLine());
-            for(int i = a; i<=1000; i += a)
+            for (int i = a; i <= 1000; i += a)
             {
                 j += 1;
                 result[j] = i;
 
-            //    Console.WriteLine(i);
+                //    Console.WriteLine(i);
             }
             return result;
         }
@@ -49,13 +49,13 @@ namespace dz6
             for (int i = 0; (i * i) < a; i++)
             {
                 //Console.WriteLine(i);
-                j = i+1;
+                j = i + 1;
             }
             return j;
             //Console.WriteLine($"{j + 1} чисел имеют квадрат меньше числа {a}");
         }
 
-        public static int FindTheGreatestDivision (int a)
+        public static int FindTheGreatestDivision(int a)
         {
             int j = a / 2;
             for (int i = a / 2; a % i != 0; i--)
@@ -69,7 +69,7 @@ namespace dz6
         public static int FindTheSumOfNumbersDivisibleBySeven(int a, int b)
         {
             int j = 0;
-            if ( a == b)
+            if (a == b)
             {
                 throw new AggregateException("передан нулевой интервал");
             }
@@ -87,7 +87,7 @@ namespace dz6
                 //Console.WriteLine($"Сумма всех чисел из интервала, кторые делятся на 7 без остатка равна {j}");
                 return j;
             }
-            else 
+            else
             {
                 for (int i = a; i < b; i++)
                 {
@@ -154,31 +154,107 @@ namespace dz6
                 double c = 0d;
                 while ((Math.Pow(c, 3) - n) != 0d)
                 {
-                c = ((a + b) / 2);
-                if ((c % 1d) != 0) //условие, которое уменьшает количество прогонов почти в 2 раза
-                {
-                    c -= 0.5;
-                }
+                    c = ((a + b) / 2);
+                    if ((c % 1d) != 0) //условие, которое уменьшает количество прогонов почти в 2 раза
+                    {
+                        c -= 0.5;
+                    }
 
-                if ((Math.Pow(c, 3) - n) > 0d)
-                {
-                    b = c;
-                }
-                else
-                {
-                    a = c;
-                }
-                //Console.WriteLine($" {c} ");
-                //Console.WriteLine(i);
-                //i += 1;
+                    if ((Math.Pow(c, 3) - n) > 0d)
+                    {
+                        b = c;
+                    }
+                    else
+                    {
+                        a = c;
+                    }
+                    //Console.WriteLine($" {c} ");
+                    //Console.WriteLine(i);
+                    //i += 1;
 
-            }
-            return c;
-            //Console.WriteLine($" {c} в кубе = {n}");
+                }
+                return c;
+                //Console.WriteLine($" {c} в кубе = {n}");
             }
 
         }
 
+        public static int FindTheNumberOfOddNumbers(int a)
+        {
+            int i = 0;
+            //Console.WriteLine("Введите число");
+            //a = Convert.ToInt32(Console.ReadLine());
+            int a0 = a;
+            while (a0 > 0)
+            {
 
+                if (((a0 % 10) % 2) != 0)
+                {
+                    i += 1;
+                }
+                a0 /= 10;
+            }
+            return i;
+            //Console.WriteLine($"в числе {a} есть {i} нечетных цифры");
+        }
+
+        public static int FindTheMirrorNumber(int a)
+        {
+            int aInvert = 0;
+            //Console.WriteLine("Введите А");
+            //a = Convert.ToInt32(Console.ReadLine());
+            int a0 = a;
+            while (a0 >= 10)
+            {
+                aInvert = aInvert * 10 + (a0 % 10);
+                a0 /= 10;
+                Console.WriteLine(aInvert);
+            }
+            return aInvert * 10 + a0;
+            //Console.WriteLine($"Зеркальное число {aInvert * 10 + a0}");
+        }
+
+        //public static void FindNumberrsSumOddGreaterSumEven(int n)
+        //{
+        //    int nEven = 0;
+        //    int nNotEven = 0;
+        //    int j = 0;
+        //    for (int i = 1; i <= n; i++)
+        //    {
+        //        j = i;
+        //        nEven = 0;
+        //        nNotEven = 0;
+        //        if (j > 10)
+        //        {
+        //            while (j / 10 > 0)
+        //            {
+        //                if ((j % 10) % 2 == 0)
+        //                {
+        //                    nEven += j % 10;
+        //                }
+        //                else
+        //                {
+        //                    nNotEven += j % 10;
+        //                }
+        //                j /= 10;
+
+        //            }
+        //        }
+
+        //        if ((j % 10) % 2 == 0)
+        //        {
+        //            nEven += j % 10;
+        //        }
+        //        else
+        //        {
+        //            nNotEven += j % 10;
+        //        }
+
+        //        if (nEven > nNotEven)
+        //        {
+        //            Console.WriteLine(i);
+        //        }
+        //    }
+        //}
     }
 }
