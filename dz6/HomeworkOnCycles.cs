@@ -214,47 +214,131 @@ namespace dz6
             //Console.WriteLine($"Зеркальное число {aInvert * 10 + a0}");
         }
 
-        //public static void FindNumberrsSumOddGreaterSumEven(int n)
-        //{
-        //    int nEven = 0;
-        //    int nNotEven = 0;
-        //    int j = 0;
-        //    for (int i = 1; i <= n; i++)
-        //    {
-        //        j = i;
-        //        nEven = 0;
-        //        nNotEven = 0;
-        //        if (j > 10)
-        //        {
-        //            while (j / 10 > 0)
-        //            {
-        //                if ((j % 10) % 2 == 0)
-        //                {
-        //                    nEven += j % 10;
-        //                }
-        //                else
-        //                {
-        //                    nNotEven += j % 10;
-        //                }
-        //                j /= 10;
+        public static int[] FindNumberrsSumOddGreaterSumEven(int n)
+        {
+            int nEven = 0;
+            int nNotEven = 0;
+            int j = 0;
+            int k = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                j = i;
+                nEven = 0;
+                nNotEven = 0;
+                if (j > 10)
+                {
+                    while (j / 10 > 0)
+                    {
+                        if ((j % 10) % 2 == 0)
+                        {
+                            nEven += j % 10;
+                        }
+                        else
+                        {
+                            nNotEven += j % 10;
+                        }
+                        j /= 10;
 
-        //            }
-        //        }
+                    }
+                }
 
-        //        if ((j % 10) % 2 == 0)
-        //        {
-        //            nEven += j % 10;
-        //        }
-        //        else
-        //        {
-        //            nNotEven += j % 10;
-        //        }
+                if ((j % 10) % 2 == 0)
+                {
+                    nEven += j % 10;
+                }
+                else
+                {
+                    nNotEven += j % 10;
+                }
 
-        //        if (nEven > nNotEven)
-        //        {
-        //            Console.WriteLine(i);
-        //        }
-        //    }
-        //}
+                if (nEven > nNotEven)
+                {
+                    k += 1;
+                    //Console.WriteLine(i);
+                }
+            }
+            nEven = 0;
+            nNotEven = 0;
+            j = 0;
+            int[] result = new int[k];
+            k = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                j = i;
+                nEven = 0;
+                nNotEven = 0;
+                if (j > 10)
+                {
+                    while (j / 10 > 0)
+                    {
+                        if ((j % 10) % 2 == 0)
+                        {
+                            nEven += j % 10;
+                        }
+                        else
+                        {
+                            nNotEven += j % 10;
+                        }
+                        j /= 10;
+
+                    }
+                }
+
+                if ((j % 10) % 2 == 0)
+                {
+                    nEven += j % 10;
+                }
+                else
+                {
+                    nNotEven += j % 10;
+                }
+
+                if (nEven > nNotEven)
+                {
+                    result[k] = i;
+                    k += 1;
+                    //Console.WriteLine(i);
+                }
+            }
+            return result;
+        }
+
+
+        public static bool FindTheSameNumbers(int a, int b1)
+        {
+            int a0 = 0;
+            int b = 0;
+            int b0 = 0;
+            bool rez = false;
+
+            //Console.WriteLine("введи 2 числа");
+            //a = Convert.ToInt32(Console.ReadLine());
+            //b1 = Convert.ToInt32(Console.ReadLine());
+            while (a != 0)
+            {
+                b0 = b1;
+                a0 = a % 10;
+                while (b0 != 0)
+                {
+                    b = b0 % 10;
+                    if (a0 == b)
+                    {
+                        rez = true;
+                    }
+                    b0 /= 10;
+                }
+                a /= 10;
+            }
+            if (rez)
+            {
+                return true;
+                //Console.WriteLine("ДА");
+            }
+            else
+            {
+                return false;
+                //Console.WriteLine("НЕТ");
+            }
+        }
     }
 }
