@@ -6,7 +6,7 @@ namespace dz6
     {
         static void Main(string[] args)
         {
-
+            HomeworkOnVariables.DescriptionOfTheEquationPassingThroughtThePoints(2, 4, 7, 0);
         }
     }
 }

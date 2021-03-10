@@ -40,11 +40,12 @@ namespace dz6
         public static string DescriptionOfTheEquationPassingThroughtThePoints(int x1, int y1, int x2, int y2)
         {
             double a = 0d;
-            a = ((y2 - y1) / (x2 - x1));
+            a = ((double)(y2 - y1) / (x2 - x1));
             double b = 0d;
-            b = (-x1 * (y2 - y1) / (x2 - x1) + y1);
+            b = ((double)-x1 * (double)(y2 - y1) / (x2 - x1) + y1);
             string result = "";
-            result = "Y = " + Convert.ToString(a) + "X + " + Convert.ToString(a);
+            result = "Y = " + Convert.ToString(a) + "X + " + Convert.ToString(b);
+            Console.WriteLine(result);
             return result;
         }
 
