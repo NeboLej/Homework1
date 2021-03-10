@@ -57,7 +57,7 @@ namespace dz6
                 }
                 else
                 {
-                    result = "III четверть";
+                    result = "IV четверть";
                     //Console.WriteLine("III четверть");
                 }
             }
@@ -65,12 +65,12 @@ namespace dz6
             {
                 if (y >= 0)
                 {
-                    result = "II Четверть";
+                    result = "II четверть";
                     //Console.WriteLine("II Четверть");
                 }
                 else
                 {
-                    result = "IV Четверть";
+                    result = "III четверть";
                     //Console.WriteLine("IV Четверть");
                 }
             }
@@ -162,8 +162,8 @@ namespace dz6
             else
             {
                 double[] result = new double[2];
-                result[0] = (-b + Math.Sqrt(d)) / (2 * a);
-                result[1] = (-b - Math.Sqrt(d)) / (2 * a);
+                result[0] = (-b - Math.Sqrt(d)) / (2 * a);
+                result[1] = (-b + Math.Sqrt(d)) / (2 * a);
                 return result;
             }
         }
