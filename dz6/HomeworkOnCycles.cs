@@ -34,8 +34,9 @@ namespace dz6
             //a = Convert.ToInt32(Console.ReadLine());
             for (int i = a; i <= 1000; i += a)
             {
-                j += 1;
+
                 result[j] = i;
+                j += 1;
 
                 //    Console.WriteLine(i);
             }
@@ -46,10 +47,10 @@ namespace dz6
         {
             int j = 0;
             //a = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; (i * i) < a; i++)
+            for (int i = 1; (i * i) < a; i++)
             {
                 //Console.WriteLine(i);
-                j = i + 1;
+                j +=1;
             }
             return j;
             //Console.WriteLine($"{j + 1} чисел имеют квадрат меньше числа {a}");
@@ -75,7 +76,7 @@ namespace dz6
             }
             else if (a > b)
             {
-                for (int i = b; i < a; i++)
+                for (int i = b; i <= a; i++)
                 {
                     if (i % 7 == 0)
                     {
@@ -89,7 +90,7 @@ namespace dz6
             }
             else
             {
-                for (int i = a; i < b; i++)
+                for (int i = a; i <= b; i++)
                 {
                     if (i % 7 == 0)
                     {
@@ -109,15 +110,16 @@ namespace dz6
             int n0 = 0;
             int n1 = 1;
             int n2 = 1;
-            for (int i = 0; i != n; i++)
+            for (int i = 2; i != n; i++)
             {
                 n2 = n0 + n1;
                 n0 = n1;
                 n1 = n2;
+                //Console.WriteLine(n2);
 
             }
-            return n2;
             //Console.WriteLine($"{n} число ряда фибоначчи = {n2}");
+            return n2;
         }
 
         public static int FindTheGreatestCommonFactor(int a, int b)
