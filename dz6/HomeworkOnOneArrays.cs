@@ -97,10 +97,81 @@ namespace dz6
 
         }
 
+        public static int CountTheNumnerOfOddItems(int[] array)
+        {
+            int j = 0;
+            for(int i =0; i <array.Length; i++)
+            {
+                if (array[i] % 2 != 0)
+                {
+                    j += 1;
+                }
+            }
+            return j;
+        }
 
+        public static int[] SwapFirstAndSecondHalf(int[] array)
+        {
+            int j = 0;
+            if ((array.Length)% 2 == 1){
+                for (int i = (array.Length - 1) / 2; i > 0; i--)
+                {
+                    int tmp = array[(array.Length) / 2 - 1 - j];
+                    array[(array.Length) / 2 - 1 - j] = array[(array.Length) - 1 - j];
+                    array[(array.Length) - 1 - j] = tmp;
+                    j += 1;
+                }
+            }
+            else
+            {
+                for (int i = (array.Length - 1) / 2; i >= 0; i--)
+                {
+                    int tmp = array[(array.Length) / 2 - 1 - j];
+                    array[(array.Length) / 2 - 1 - j] = array[(array.Length) - 1 - j];
+                    array[(array.Length) - 1 - j] = tmp;
+                    j += 1;
+                }
+            }
+            return array;
+        }
 
+        public static int[] SortSelectArray(int[] array)
+        {
+            for(int i = 0; i < array.Length- 1; i++)
+    {
+                int min = i;
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j] < array[min])
+                    {
+                        min = j;
+                    }
+                }
+                int tmp = array[i];
+                array[i] = array[min];
+                array[min] = tmp;
+            }
+            return array;
+        }
 
+        public static int[] SortBubbleArray(int[] array)
+        {
+            for ( int i = 0; i!=array.Length-1; i++)
+            {
+                for (int j = 0; j != array.Length-1-i; j++)
+                {
+                    if (array[j] < array[j + 1])
+                    {
+                        int tmp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = tmp;
+                    }
+                }
+            }
+            return array;
+        }
 
+        
 
 
 

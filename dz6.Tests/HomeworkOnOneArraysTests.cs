@@ -73,5 +73,54 @@ namespace dz6.Tests
 
 
 
+        [TestCase(new int[] { 4, 8, 15, 16, 23, 42 }, 2)]
+        [TestCase(new int[] { 4, 8, -6, 16, 23, -4 }, 1)]
+        [TestCase(new int[] { 4, 8, -6, 16, 23, -42, -4, 88, 109, 0 }, 2)]
+        public void OneArraysTest7(int[] a, int expected)
+        {
+            int actual = HomeworkOnOneArrays.CountTheNumnerOfOddItems(a);
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+        [TestCase(new int[] { 4, 8, 15, 16, 23, 42 }, new int[] { 16, 23, 42, 4, 8, 15})]
+        [TestCase(new int[] { 4, 8, 15, 16, 23, 42, 67}, new int[] { 23, 42, 67, 16, 4, 8, 15})]
+        [TestCase(new int[] { 4, 8, 15}, new int[] { 15, 8, 4})]
+        public void OneArraysTest8(int[] a, int[] expected)
+        {
+            int[] actual = HomeworkOnOneArrays.SwapFirstAndSecondHalf(a);
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+        [TestCase(new int[] { 4, 8, 15, 16, 23, 42 }, new int[] { 4, 8, 15, 16, 23, 42})]
+        [TestCase(new int[] { 23, 4, 8, 67, 15, 16, 42, -70}, new int[] { -70, 4, 8, 15, 16, 23, 42, 67})]
+        [TestCase(new int[] { 4, 8, 15}, new int[] { 4, 8, 15})]
+        public void OneArraysTest9(int[] a, int[] expected)
+        {
+            int[] actual = HomeworkOnOneArrays.SortSelectArray(a);
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestCase(new int[] {2, 8, 1}, new int[] {8, 2, 1})]
+        [TestCase(new int[] {2, 18, 21, -8, 100, 9}, new int[] { 100, 21, 18, 9, 2, -8 })]
+        [TestCase(new int[] {-2, -8, -1, 7, 1, 0}, new int[] { 7, 1, 0, -1, -2, -8 })]
+        public void OneArraysTest10(int[] a, int[] expected)
+        {
+            int[] actual = HomeworkOnOneArrays.SortBubbleArray(a);
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+
+
+
+
+
+
     }
 }
